@@ -1,19 +1,103 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Markdown from '../components/Markdown.astro';
-
-const explainer = `
-An Astro website can go way beyond static pages - on the right platform.
-
-Netlify supports not only [Streaming SSR](https://docs.astro.build/en/guides/server-side-rendering/#html-streaming) and fast [Edge Middleware](https://docs.astro.build/en/guides/middleware/), but also [on-demand revalidation](https://www.netlify.com/blog/cache-tags-and-purge-api-on-netlify/) and [stale-while-revalidate](https://www.netlify.com/blog/swr-and-fine-grained-cache-control/). 
-Any page or data can be rebuilt only when needed, without site visitors ever getting a performance hit.
-`;
+/* няма нужда от frontmatter */
 ---
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StroiPlus — Оферта: Самосвал и Багери • Изкопи, товарене и транспорт</title>
+  <meta name="description" content="Професионални услуги със самосвал и багери (мини и комбиниран) в София и региона до 50 км: изкопи, товарене, транспорт на инертни материали, извозване на отпадъци, бърза реакция в същия ден." />
+  <meta property="og:title" content="StroiPlus — Самосвал и Багери" />
+  <meta property="og:description" content="Мини багер 1.8–3.5 т, комбиниран багер 7–9 т, самосвал 3.5–10 т. Изкопи, товарене, транспорт и извозване." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="bg_BG" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath fill='%2309a66a' d='M32 168h144v48H32z'/%3E%3Cpath fill='%2318181b' d='M16 88h168a8 8 0 0 1 8 8v64H16z'/%3E%3Ccircle cx='72' cy='216' r='20' fill='%2318181b'/%3E%3Ccircle cx='168' cy='216' r='20' fill='%2318181b'/%3E%3C/svg%3E"/>
 
-<Layout title="Welcome to Astro.">
-    <h1 class="mb-10">Netlify Platform Starter for Astro</h1>
-    <Markdown content={explainer} class="mb-10 text-lg" />
-    <p>
-        <a href="https://docs.netlify.com/frameworks/astro/" class="btn btn-lg sm:min-w-64">Read the Docs</a>
-    </p>
-</Layout>
+  <style>
+    :root{
+      --bg:#0b0c0f;--panel:#121419;--text:#eef2f6;--muted:#a8b3c7;
+      --accent:#10b981;--accent-2:#22d3ee;--border:#1f2937;
+      --shadow:0 10px 30px rgba(0,0,0,.35);--radius:16px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f6f8fb;--panel:#ffffff;--text:#0b1020;--muted:#4b5563;
+        --border:#e5e7eb;--shadow:0 14px 28px rgba(2,6,23,.08);
+      }
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,'Helvetica Neue',Arial,'Apple Color Emoji','Segoe UI Emoji'}
+    a{color:var(--accent);text-decoration:none}
+    .wrap{max-width:1120px;margin-inline:auto;padding:24px}
+    header{position:sticky;top:0;background:linear-gradient(180deg, rgba(11,12,15,.9), rgba(11,12,15,.6));backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid var(--border);z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px}
+    .brand .logo{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:conic-gradient(from 210deg at 50% 50%, var(--accent), var(--accent-2));box-shadow:var(--shadow)}
+    .brand span{font-size:18px}
+    nav a{padding:10px 12px;border-radius:10px;color:var(--text)}
+    nav a:hover{background:rgba(255,255,255,.06)}
+
+    .hero{isolation:isolate;position:relative;padding:72px 0;background:
+      radial-gradient(1200px 600px at 80% -40%, rgba(32,211,238,.12), transparent 60%),
+      radial-gradient(1000px 400px at 0% -10%, rgba(16,185,129,.12), transparent 60%)}
+    .hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero .card{padding:28px}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:6px 10px;border-radius:999px;background:rgba(34,211,238,.14);border:1px solid rgba(34,211,238,.35);font-weight:600;color:#a5f3fc}
+    h1{font-size:38px;line-height:1.15;margin:14px 0 12px}
+    .lead{font-size:18px;color:var(--muted);margin:0 0 18px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid var(--border);background:#111318;color:var(--text);font-weight:700}
+    .btn.primary{background:linear-gradient(180deg, var(--accent), #0ea371);border-color:#0ea371;color:#04130d}
+    .btn:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:#0f1320;border:1px dashed var(--border);color:var(--muted)}
+    .section{padding:40px 0}
+    .section h2{font-size:28px;margin:0 0 14px}
+    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .kpi{padding:18px}
+    .kpi strong{font-size:22px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .feature{padding:18px}
+    .feature h3{margin:6px 0 6px;font-size:18px}
+    .muted{color:var(--muted)}
+    .pricing{overflow:auto}
+    table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:14px;overflow:hidden;border:1px solid var(--border)}
+    th,td{padding:14px;border-bottom:1px solid var(--border);text-align:left}
+    th{font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+    tr:last-child td{border-bottom:none}
+    .note{font-size:14px;color:var(--muted)}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.35);color:#bbf7d0;font-weight:700}
+    .steps{counter-reset:step}
+    .steps li{list-style:none;margin:0 0 12px;padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--panel);display:flex;gap:14px}
+    .steps li::before{counter-increment:step;content:counter(step);width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:#0e1523;color:#cbd5e1;font-weight:800}
+    .footer{padding:28px 0;border-top:1px solid var(--border);color:var(--muted);font-size:14px}
+    .tools{display:flex;gap:10px;flex-wrap:wrap}
+    .input{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--border);background:#0f1116;color:var(--text)}
+    @media (max-width: 960px){.hero .grid, .grid-3, .grid-2, .kpis{grid-template-columns:1fr}}
+    @media print{
+      header, .tools, nav, .btn, .badges{display:none !important}
+      body{background:#fff;color:#000}
+      .card, table{box-shadow:none;border-color:#ddd}
+      a{color:#000}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Тук постави останалия HTML от твоя файл 1:1 (всички секции, таблици, форми, footer и script) -->
+</body>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  (function(){const el=document.querySelector('#asof > span'); if(el){ el.textContent = new Date().toLocaleDateString('bg-BG'); }})();
+  function sendQuote(e){
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(e.target).entries());
+    const subject = encodeURIComponent('Запитване — ' + (data.service || 'услуга'));
+    const body = encodeURIComponent(`Име: ${data.name}\nТелефон: ${data.phone}\nИмейл: ${data.email||''}\nНаселено място: ${data.city||''}\nУслуга: ${data.service||''}\nПродължителност: ${data.duration||''}\nБележки: ${data.notes||''}`);
+    window.location.href = `mailto:info@stroiplus.bg?subject=${subject}&body=${body}`;
+    return false;
+  }
+</script>
+

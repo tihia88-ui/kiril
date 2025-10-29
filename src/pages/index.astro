@@ -13,107 +13,125 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath fill='%23000000' d='M32 168h144v48H32z'/%3E%3Cpath fill='%23000000' d='M16 88h168a8 8 0 0 1 8 8v64H16z'/%3E%3Ccircle cx='72' cy='216' r='20' fill='%23000000'/%3E%3Ccircle cx='168' cy='216' r='20' fill='%23000000'/%3E%3C/svg%3E"/>
 
   <style>
-    /* --- Твоите CSS стилове остават същите --- */
+    /* --- Твоите CSS стилове --- */
+    :root { color-scheme: light dark; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+    .wrap{max-width:1100px;margin:0 auto;padding:16px}
+    header{position:sticky;top:0;background:rgba(255,255,255,.8);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid #e5e7eb}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    nav a{margin:0 8px;text-decoration:none}
+    .hero{padding:40px 0}
+    .grid{display:grid;gap:16px}
+    .grid-2{grid-template-columns:1fr}
+    @media(min-width:900px){.grid-2{grid-template-columns:1.2fr .8fr}}
+    .card{background:rgba(0,0,0,.03);padding:24px;border-radius:16px;border:1px solid #e5e7eb}
+    .eyebrow{font-size:.9rem;color:#6b7280}
+    .lead{font-size:1.1rem;line-height:1.6}
+    .btn{display:inline-block;padding:10px 16px;border-radius:10px;border:1px solid #d1d5db;text-decoration:none}
+    .btn.primary{border-color:transparent;background:#111;color:#fff}
+    .tools{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+    .feature{margin:40px 0}
+    .muted{color:#6b7280}
+    .footer{border-top:1px solid #e5e7eb;padding:24px 0;margin-top:40px}
   </style>
 </head>
 
-<body>
-  <!-- Твоето съдържание започва тук -->
+<!-- съдържанието на <body> отива директно тук -->
 
-  <header>
-    <div class="wrap nav">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <span>StroiPlus • Самосвал и Багери</span>
-      </div>
-      <nav>
-        <a href="#services">Услуги</a>
-        <a href="#pricing">Цени</a>
-        <a href="#area">Покритие</a>
-        <a href="#contact">Контакти</a>
-        <a href="#terms">Условия</a>
-        <a href="#crane">Кран 5 т</a>
-        <a href="#materials">Материали</a>
-      </nav>
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <span>StroiPlus • Самосвал и Багери</span>
     </div>
-  </header>
+    <nav>
+      <a href="#services">Услуги</a>
+      <a href="#pricing">Цени</a>
+      <a href="#area">Покритие</a>
+      <a href="#contact">Контакти</a>
+      <a href="#terms">Условия</a>
+      <a href="#crane">Кран 5 т</a>
+      <a href="#materials">Материали</a>
+    </nav>
+  </div>
+</header>
 
-  <section class="hero">
-    <div class="wrap grid grid-2">
-      <div class="card">
-        <span class="eyebrow" id="asof">Оферта • Актуално към <span></span></span>
-        <h1>Самосвал и багери — изкопи, товарене и транспорт</h1>
-        <p class="lead">
-          Професионални услуги със <strong>мини багер (1.8–3.5 т)</strong>,
-          <strong>комбиниран багер (7–9 т)</strong> и
-          <strong>самосвал (3.5–10 т)</strong> в <strong>София и региона до 50 км</strong>.
-          Бърза реакция — често в рамките на същия ден.
-        </p>
-        <div class="cta tools">
-          <a class="btn primary" href="tel:+359876207535" aria-label="Обади се сега">
-            Обади се сега
-          </a>
-          <a class="btn" href="#quote" aria-label="Изискай оферта">Изискай оферта</a>
-        </div>
+<section class="hero">
+  <div class="wrap grid grid-2">
+    <div class="card">
+      <span class="eyebrow" id="asof">Оферта • Актуално към <span></span></span>
+      <h1>Самосвал и багери — изкопи, товарене и транспорт</h1>
+      <p class="lead">
+        Професионални услуги със <strong>мини багер (1.8–3.5 т)</strong>,
+        <strong>комбиниран багер (7–9 т)</strong> и
+        <strong>самосвал (3.5–10 т)</strong> в <strong>София и региона до 50 км</strong>.
+        Бърза реакция — често в рамките на същия ден.
+      </p>
+      <div class="cta tools">
+        <a class="btn primary" href="tel:+359876207535" aria-label="Обади се сега">Обади се сега</a>
+        <a class="btn" href="#quote" aria-label="Изискай оферта">Изискай оферта</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ... (остави останалите секции 1:1, както са при теб) ... -->
+<!-- Тук оставяш и останалите секции, които имаш -->
 
-  <section id="contact" class="card feature">
-    <h3>Контакти</h3>
-    <p>
-      <strong>StroiPlus</strong><br />
-      София / Костинброд<br />
-      <a href="tel:+359876207535">+359 876 207 535</a><br />
-      <a href="mailto:info@http://transportfirma.site/">http://transportfirma.site/</a><br />
-      <a href="https://stroiplus.bg" target="_blank" rel="noopener">stroiplus.bg</a>
-    </p>
-    <p class="muted">Работно време: Пон–Съб 08:00–18:00</p>
-  </section>
+<section id="contact" class="card feature wrap">
+  <h3>Контакти</h3>
+  <p>
+    <strong>StroiPlus</strong><br />
+    София / Костинброд<br />
+    <a href="tel:+359876207535">+359 876 207 535</a><br />
+    <a href="mailto:info@stroiplus.bg">info@stroiplus.bg</a><br />
+    <a href="https://transportfirma.site">transportfirma.site</a><br />
+    <a href="https://stroiplus.bg" target="_blank" rel="noopener">stroiplus.bg</a>
+  </p>
+  <p class="muted">Работно време: Пон–Съб 08:00–18:00</p>
+</section>
 
-  <footer class="footer">
-    <div class="wrap">
-      © <span id="year"></span> StroiPlus • Оферта „Самосвал и Багери“. Всички права запазени.
-    </div>
-  </footer>
+<footer class="footer">
+  <div class="wrap">
+    © <span id="year"></span> StroiPlus • Оферта „Самосвал и Багери“. Всички права запазени.
+  </div>
+</footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    (function () {
-      const el = document.querySelector('#asof > span');
-      if (el) el.textContent = new Date().toLocaleDateString('bg-BG');
-    })();
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  (function () {
+    const el = document.querySelector('#asof > span');
+    if (el) el.textContent = new Date().toLocaleDateString('bg-BG');
+  })();
 
-    function sendQuote(e) {
-      e.preventDefault();
-      const data = Object.fromEntries(new FormData(e.target).entries());
-      const subject = encodeURIComponent('Запитване — ' + (data.service || 'услуга'));
-      const body = encodeURIComponent(`Име: ${data.name}
+  function sendQuote(e) {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(e.target).entries());
+    const subject = encodeURIComponent('Запитване — ' + (data.service || 'услуга'));
+    const body = encodeURIComponent(`Име: ${data.name}
 Телефон: ${data.phone}
 Имейл: ${data.email || ''}
 Населено място: ${data.city || ''}
 Услуга: ${data.service || ''}
 Продължителност: ${data.duration || ''}
 Бележки: ${data.notes || ''}`);
-      window.location.href = `mailto:info@stroiplus.bg?subject=${subject}&body=${body}`;
-      return false;
-    }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "StroiPlus",
-    "url": "https://stroiplus.bg",
-    "telephone": "+359876207535",
-    "address": {"@type":"PostalAddress","addressLocality":"София","addressCountry":"BG"},
-    "areaServed": ["София-град","София-област","Костинброд"," Божурище","Банкя","Нови Искър","Перник"],
-    "description": "Услуги със самосвал и багери (мини и комбиниран), камион с кран до 5 т и доставка на инертни материали: изкопи, товарене, транспорт и извозване за София и региона до 50 км.",
-    "openingHours": "Mo-Sa 08:00-20:00",
-    "priceRange": "$$"
+    window.location.href = `mailto:info@stroiplus.bg?subject=${subject}&body=${body}`;
+    return false;
   }
-  </script>
-</body>
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "StroiPlus",
+  "url": "https://stroiplus.bg",
+  "telephone": "+359876207535",
+  "address": {"@type":"PostalAddress","addressLocality":"София","addressCountry":"BG"},
+  "areaServed": ["София-град","София-област","Костинброд","Божурище","Банкя","Нови Искър","Перник"],
+  "description": "Услуги със самосвал и багери (мини и комбиниран), камион с кран до 5 т и доставка на инертни материали: изкопи, товарене, транспорт и извозване за София и региона до 50 км.",
+  "openingHours": "Mo-Sa 08:00-20:00",
+  "priceRange": "$$"
+}
+</script>
+
